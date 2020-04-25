@@ -36,7 +36,6 @@ public class SnakeFromScratch {
 	}
 	while // vuoi giocare ancora
 		( utenteVuoleGiocareAncora() ) ;
-
 	}
 
 
