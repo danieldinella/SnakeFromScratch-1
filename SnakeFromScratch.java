@@ -1,6 +1,8 @@
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
-public class SnakeFromScratch {
+public class SnakeFromScratch 
+{
 	
 	static JFrame finestraTop;
 
@@ -18,9 +20,15 @@ public class SnakeFromScratch {
 	}
 
 	private  static  boolean utenteVuoleGiocareAncora() 
-	{ return true;  } 
+	{ int scelta= JOptionPane.showConfirmDialog(finestraTop,
+												"Vuoi giocare ancora ?", 
+												"Game Over", 
+												JOptionPane.YES_NO_OPTION);
+		return (scelta == JOptionPane.OK_OPTION ) ;  
+	} 
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 createAndShowGUI();
@@ -36,8 +44,9 @@ public class SnakeFromScratch {
 	}
 	while // vuoi giocare ancora
 		( utenteVuoleGiocareAncora() ) ;
-	}
-
-
+	
+	//TODO : fare in modo che venga chiusa l'applicazione
+	finestraTop.dispose();
+	};
 	
 }
