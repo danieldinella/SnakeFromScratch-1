@@ -2,8 +2,18 @@ import javax.swing.JFrame;
 
 public class SnakeFromScratch {
 	
+	static JFrame finestraTop;
+
 	private static  void createAndShowGUI() 
-	{
+	{		finestraTop= new JFrame();
+		
+		{	//Setting up the window settings	
+			finestraTop.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+			finestraTop.setTitle("SnakeFromScratch");
+			finestraTop.setSize(300,300);
+			finestraTop.setVisible(true);
+		}
+ 
 
 	}
 	
@@ -14,6 +24,14 @@ public class SnakeFromScratch {
             }
         });
 		          
+	do 
+	{   // gioca una partita 
+			
+	}
+	while ( true ) ;// vuoi giocare ancora
 
 	}
+
+
+	
 }
