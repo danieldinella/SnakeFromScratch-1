@@ -7,14 +7,30 @@ public class Partita extends JPanel
 	private Serpente serpente ;
 	
 
-	public void Partita ()
-	{
+	public  Partita ( )
+	{	
+		this.campo = new CampoDiGioco() ; 
+		campo.inizializzaTuttoPrato();
+		
+		this.add( this.campo);
+	
+		serpente=new Serpente(this);
+			
+			
 	}
-
-	public void gioca ()
-	{
-	};
-
+	
+	public void gioca()
+	{          
+		serpente.start();
+    
+		try
+		{
+			serpente.join();  
+		}
+		catch(Exception e){System.out.println(e);}  
+    
+    
+    }
 	public CampoDiGioco getCampoDiGioco()
     {
         return campo;

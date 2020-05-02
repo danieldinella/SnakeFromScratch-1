@@ -4,6 +4,8 @@ public class SnakeFromScratch
 {
 
 	static JFrame finestraTop;
+	static Partita partita;
+	
 
 	private static void createAndShowGUI ()
 	{
@@ -25,22 +27,30 @@ public class SnakeFromScratch
 
 	public static void main ( String[] args )
 	{
-		javax.swing.SwingUtilities.invokeLater(new Runnable()
-		{
-			public void run ()
-			{
-				createAndShowGUI();
-			}
-		});
+		// TODO: #1 riprendere in seguito
+		//javax.swing.SwingUtilities.invokeLater(new Runnable()
+		//{
+		//	public void run ()
+		//	{
+		
+		createAndShowGUI();
+		
+		partita = new Partita();
+		finestraTop.add(partita);
+		
+		finestraTop.setVisible(true);
 
 		do
 		{ // gioca una partita
 
-			Partita partita = new Partita();
 			partita.gioca();
 
 		} while // vuoi giocare ancora
 		(utenteVuoleGiocareAncora());
+        
+        
+        //	}
+		//}); //TODO: #1 riprendere in seguito
 
 	}
 
