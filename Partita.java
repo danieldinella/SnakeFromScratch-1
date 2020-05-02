@@ -15,12 +15,16 @@ public class Partita extends JPanel
 		this.add( this.campo);
 	
 		serpente=new Serpente(this);
-			
-			
+        
+        KeyboardAscoltatore ka = new KeyboardAscoltatore(serpente);
+	    this.addKeyListener(ka);
+	    requestFocusInWindow();
 	}
 	
 	public void gioca()
-	{          
+	{   
+		requestFocusInWindow();      
+		
 		serpente.start();
     
 		try
