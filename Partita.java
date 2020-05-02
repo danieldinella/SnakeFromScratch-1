@@ -15,5 +15,9 @@ public class Partita extends JPanel
 	{
 	};
 
+	public CampoDiGioco getCampoDiGioco()
+    {
+        return campo;
+    }
 }
 
