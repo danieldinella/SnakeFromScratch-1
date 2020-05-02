@@ -1,6 +1,19 @@
-public class Partita
+import javax.swing.JPanel;
+
+public class Partita extends JPanel 
 {
-	public void gioca(){};
+	private CampoDiGioco campo ;
+	
+	private Serpente serpente ;
+	
+
+	public void Partita ()
+	{
+	}
+
+	public void gioca ()
+	{
+	};
 
 }
 
