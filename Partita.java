@@ -6,6 +6,8 @@ public class Partita extends JPanel
 	
 	private Serpente serpente ;
 	
+	private Cibo cibo ; 
+	
 
 	public  Partita ( )
 	{	
@@ -18,6 +20,9 @@ public class Partita extends JPanel
         
         KeyboardAscoltatore ka = new KeyboardAscoltatore(serpente);
 	    this.addKeyListener(ka);
+	    
+	    cibo = new Cibo(this );
+	    	    
 	    requestFocusInWindow();
 	}
 	
@@ -39,5 +44,7 @@ public class Partita extends JPanel
     {
         return campo;
     }
+    
+
 }
 

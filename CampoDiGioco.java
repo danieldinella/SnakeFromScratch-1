@@ -36,5 +36,8 @@ public class CampoDiGioco extends JPanel
 		return (matrice[punto.getR()][punto.getC()]) ;
 	}	
 
-	
+	public Quadratino getQuadratino( int r, int c )
+	{
+		return (matrice[r][c]) ;
+	}	
 }
