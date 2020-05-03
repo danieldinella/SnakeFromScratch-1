@@ -32,16 +32,16 @@ public class SnakeFromScratch
 		//{
 		//	public void run ()
 		//	{
+			createAndShowGUI();	
 		
-		createAndShowGUI();
-		
-		partita = new Partita();
-		finestraTop.add(partita);
-		
-		finestraTop.setVisible(true);
-
-		do
+       do
 		{ // gioca una partita
+			
+			partita = new Partita();
+			finestraTop.add(partita);
+			
+			finestraTop.setVisible(true);
+
 
 			partita.gioca();
 
