@@ -45,6 +45,10 @@ public class Partita extends JPanel
         return campo;
     }
     
+    public void generaCibo()
+    {
+		cibo.genera();
+	}
 
 }
 
