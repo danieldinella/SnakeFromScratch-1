@@ -20,15 +20,15 @@ public class Cibo
 	public void genera()
     { Random random = new Random();
 		int r; int c ;
-		do 
+        do 
         { 
 		    r  = random.nextInt(19);
             c  = random.nextInt(19);
-            
         }
         while ( ! campo.getQuadratino( r  , c ).isPrato() ) ;
         
         posizione = new PuntoDelCampo(r,c);
+        campo.getQuadratino(posizione).setToCibo();
 
     }
 
