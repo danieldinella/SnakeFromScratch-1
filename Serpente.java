@@ -27,9 +27,10 @@ public class Serpente extends Thread
 		if (campo.getQuadratino(nuovaPos).isCibo())
 		{
 			System.out.print("GnamGnam ");
-
+			campo.getQuadratino(posTesta).setToPrato();
 			campo.getQuadratino(nuovaPos).setToSerpente();
 			posTesta.spostaAl(nuovaPos);
+			partita.generaCibo();
 		}
 
 		else if (campo.getQuadratino(nuovaPos).isPrato())
