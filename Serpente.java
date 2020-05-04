@@ -1,9 +1,12 @@
+import java.util.LinkedList;
 
 public class Serpente extends Thread
 {
 	private boolean inVita;
+	
+	private LinkedList<PuntoDelCampo> corpo ;
 
-	private PuntoDelCampo posTesta;
+	//private PuntoDelCampo posTesta;
 
 	private PuntoDelCampo direzione;
 
@@ -13,13 +16,30 @@ public class Serpente extends Thread
 	{
 		partita = p;
         direzione = NORD;
-		posTesta = new PuntoDelCampo(19, 0);
-		p.getCampoDiGioco().getQuadratino(posTesta).setToSerpente();
+        
+        corpo = new LinkedList<PuntoDelCampo>();
+        
+		PuntoDelCampo punto;
+		
+		punto=new PuntoDelCampo(19, 0);
+		corpo.addFirst( punto );
+		partita.getCampoDiGioco().getQuadratino(punto).setToSerpente();
+		
+		punto=new PuntoDelCampo(18, 0);
+		corpo.addFirst( punto );
+		partita.getCampoDiGioco().getQuadratino(punto).setToSerpente();
+		
+        punto=new PuntoDelCampo(17, 0);
+		corpo.addFirst( punto );
+		partita.getCampoDiGioco().getQuadratino(punto).setToSerpente();
+		
 		inVita = true;
 	}
 
 	public void avanza ()
 	{
+		PuntoDelCampo posTesta = corpo.getFirst();
+		
 		PuntoDelCampo nuovaPos = PuntoDelCampo.somma(posTesta, direzione);
 
         CampoDiGioco campo = partita.getCampoDiGioco();
@@ -27,17 +47,22 @@ public class Serpente extends Thread
 		if (campo.getQuadratino(nuovaPos).isCibo())
 		{
 			System.out.print("GnamGnam ");
-			campo.getQuadratino(posTesta).setToPrato();
+			
+			corpo.addFirst(nuovaPos);
 			campo.getQuadratino(nuovaPos).setToSerpente();
-			posTesta.spostaAl(nuovaPos);
+			
 			partita.generaCibo();
 		}
 
 		else if (campo.getQuadratino(nuovaPos).isPrato())
 		{
-			campo.getQuadratino(posTesta).setToPrato();
-			posTesta.spostaAl(nuovaPos);
+			corpo.addFirst(nuovaPos);
 			campo.getQuadratino(nuovaPos).setToSerpente();
+			
+			
+			campo.getQuadratino(corpo.getLast()).setToPrato();
+			corpo.removeLast();
+
 
 		} else // if ( campo.getQuadratino(x,y).isSerpente() )// il caso rimasto è che sia
 				// serpente!!
@@ -55,7 +80,7 @@ public class Serpente extends Thread
 		{
 			try
 			{
-				sleep(200);
+				sleep(100);
 			} catch (InterruptedException e)
 			{
 				e.printStackTrace();
