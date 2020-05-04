@@ -13,19 +13,19 @@ import java.awt.event.KeyEvent;
 		int  keycode = e.getKeyCode();
  		 
  		
- 		     if (( keycode==40) && ! serpente.staAndandoSud() )
+ 		     if (( keycode==40) && ! serpente.staAndandoNord() )
 				{
 					serpente.vaiVersoSud(); 
 				}
-		else if (( keycode==38) && ! serpente.staAndandoNord() )
+		else if (( keycode==38) && ! serpente.staAndandoSud() )
 				{
 					serpente.vaiVersoNord();
 				}
-		else if ((keycode==37) && ! serpente.staAndandoOvest() )
+		else if ((keycode==37) && ! serpente.staAndandoEst() )
 				{
 					serpente.vaiVersoOvest();
 				}
-		else if ((keycode==39) && ! serpente.staAndandoEst() )
+		else if ((keycode==39) && ! serpente.staAndandoOvest() )
 				{
 					serpente.vaiVersoEst();
 				}
